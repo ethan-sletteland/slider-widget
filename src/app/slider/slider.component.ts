@@ -70,10 +70,12 @@ export class SliderComponent {
         )[0] as HTMLElement;
         const ball = document.getElementsByClassName('ball')[0] as HTMLElement;
         const sliderLeft = e.clientX - slider.offsetLeft - 15;
-        ball.style.left = sliderLeft + 'px';
-        this.selected = Math.floor(
-          (sliderLeft / slider.clientWidth) * this.nodes
-        );
+        if (sliderLeft > 0 && sliderLeft < slider.clientWidth - 50) {
+          ball.style.left = sliderLeft + 'px';
+          this.selected = Math.floor(
+            (sliderLeft / slider.clientWidth) * this.nodes
+          );
+        }
       }
     );
   }
@@ -86,17 +88,21 @@ export class SliderComponent {
   @HostListener('window:keyup', ['$event'])
   keyEvent(event: KeyboardEvent) {
     if (event.keyCode === KEY_CODE.RIGHT_ARROW) {
-      this.selected += 1;
-      this.leftPosition =
-        document.getElementById('tick-' + this.selected)?.offsetLeft + 'px';
-      this.move();
+      if (this.selected < this.nodes - 1) {
+        this.selected += 1;
+        this.leftPosition =
+          document.getElementById('tick-' + this.selected)?.offsetLeft + 'px';
+        this.move();
+      }
     }
 
     if (event.keyCode === KEY_CODE.LEFT_ARROW) {
-      this.selected -= 1;
-      this.leftPosition =
-        document.getElementById('tick-' + this.selected)?.offsetLeft + 'px';
-      this.move();
+      if (this.selected > 0) {
+        this.selected -= 1;
+        this.leftPosition =
+          document.getElementById('tick-' + this.selected)?.offsetLeft + 'px';
+        this.move();
+      }
     }
   }
 

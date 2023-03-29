@@ -18,10 +18,6 @@ This slider can be interacted with in three ways:
 
 Animation state breaks when setting the slider and then using using click or keyboard.
 
-When using arrows the selected number can break the range.
-
-When using drag the knob can be dragged entirely out of the range.
-
 When dragging it's pretty earsy to lose the knob when moving the mouse too quickly.
 
 CSS isn't perfect! I left twiddling that to last and ran out of time.
