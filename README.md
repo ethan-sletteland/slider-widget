@@ -16,7 +16,7 @@ This slider can be interacted with in three ways:
 
 ## Known issues
 
-Animation state breaks when setting the slider and then using using click or keyboard.
+Animation state breaks when setting the slider by dragging the knob and then using using click or keyboard.
 
 When dragging it's pretty earsy to lose the knob when moving the mouse too quickly.
 
