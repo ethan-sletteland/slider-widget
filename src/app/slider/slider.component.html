@@ -1,0 +1,29 @@
+<div class="slider">
+  <div
+    class="ball"
+    [@position]="{
+      value: position,
+      params: { time: animationTime, left: leftPosition }
+    }"
+    (mousedown)="grab($event)"
+    (mouseup)="release($event)"
+    (mouseout)="release($event)"
+  ></div>
+  <a
+    *ngFor="let node of nodesArr; let i = index"
+    href="#"
+    (click)="select($event, i)"
+    [ngClass]="{ selected: selected === i }"
+    [id]="'tick-' + i"
+  >
+    <div class="slider-bar">
+      <div class="line"></div>
+      <div class="tick"></div>
+    </div>
+    {{ i }}
+  </a>
+</div>
+
+<div>
+  <p style="color: aliceblue">{{ selected }} selected</p>
+</div>
