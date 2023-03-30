@@ -18,6 +18,6 @@ This slider can be interacted with in three ways:
 
 Animation state breaks when setting the slider by dragging the knob and then using using click or keyboard.
 
-When dragging it's pretty earsy to lose the knob when moving the mouse too quickly.
+When dragging it's pretty easy to lose the knob when moving the mouse too quickly.
 
 CSS isn't perfect! I left twiddling that to last and ran out of time.
